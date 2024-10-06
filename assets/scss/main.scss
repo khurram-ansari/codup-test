@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #462ddf;
+  --secondary-color: #f4f4f4;
+}
+body {
+  font-family: "Instrument Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+}
+.nav-bar {
+  .container {
+    height: 100%;
+  }
+}
+.nav-bar,
+.product-categories {
+  height: 3rem;
+}
+
+.btn {
+  transition: background-color 0.5s;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  &.ghost {
+    background-color: transparent;
+    border-radius: 999px;
+    aspect-ratio: 1/1;
+  }
+  &.ghost:hover {
+    background-color: silver;
+  }
+
+  &.secondary {
+    background-color: #f4f4f4;
+  }
+}
+
+.hero-banner {
+  height: 24rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://s3-alpha-sig.figma.com/img/6c59/1560/657e45f2584aa2eeb4b58b2d6a20f86d?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SktezDF0qzU70Gyr1Nkkg-FUEZdlbdhgct4p38Flnb9mhdyvVUlt6IfHB5FI-0Ih2FpjMeF3XSy6ZfYx47wsPLCdosgCzjGlWArWBSUucTZavylaJM3B94nQq1GwHfMaofZ3iGwZWwR79o4B7S4cRKD0FD3iLhc12ObZ05Mqe1-eWKWn1gquS0x5~Ip305h7fX8YPmOqBkRK9vl4ECk~OgOVb0CHQ7qiYpaecHBEpU~lwHl5JQYjMALfwk7u23NOHHvHheeQqV7Io5mpHMdDvAm5hnh6T2YsX7OOQvyo70g-KNhJuGsfO6VBDVrtmYtbQVjU0bDBVlx8hmLnjRb0MQ__");
+}
+
+.product-categories {
+  gap: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 2rem;
+}
+
+.product-card {
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 10px;
+  padding: 1.5rem;
+  .img-container {
+    aspect-ratio: 280/340;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.cart-add-btn {
+  width: 100%;
+  height: 3rem;
+  border-radius: 2px;
+}
+
+.drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 30rem;
+  height: 100%;
+  background: white;
+  z-index: 999;
+  color: red;
+}
