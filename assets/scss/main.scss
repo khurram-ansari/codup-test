@@ -111,11 +111,21 @@ body {
 
 .drawer {
   position: fixed;
+  overflow: hidden;
   right: 0;
   top: 0;
-  width: 30rem;
   height: 100%;
   background: white;
   z-index: 999;
   color: red;
+  width: 0;
+  &.open {
+    width: 30rem;
+  }
+
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
 }

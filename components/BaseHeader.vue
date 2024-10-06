@@ -6,9 +6,7 @@
       </div>
 
       <div>
-        <BaseButton variant="ghost">
-          <Icon name="uil:cart" />
-        </BaseButton>
+        <Cart />
       </div>
     </div>
   </header>

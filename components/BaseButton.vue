@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 type TBtnProps = {
-  variant: "primary" | "ghost" | "secondary";
+  variant?: "primary" | "ghost" | "secondary";
 };
 
 const props = withDefaults(defineProps<TBtnProps>(), {

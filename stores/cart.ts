@@ -15,10 +15,12 @@ export const useCartStore = defineStore("cart", () => {
     } else {
       cartItems.value.push(product);
     }
+
+    cartDrawer.value = true;
   }
-  function toggleCartDrawer() {
-    cartDrawer.value = !cartDrawer.value;
+  function toggleCartDrawer(value: boolean) {
+    cartDrawer.value = value;
   }
 
-  return { addToCart, cartItems, toggleCartDrawer };
+  return { addToCart, cartItems, toggleCartDrawer, cartDrawer };
 });
