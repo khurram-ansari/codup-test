@@ -4,7 +4,10 @@
     description="Discover our wide range of products"
   />
 
-  <ProductCategories :items="data.categories" />
+  <ProductCategories
+    @on-item-click="selectedCategory = $event"
+    :items="['all', ...data.categories]"
+  />
   <ProductGrid :products="data.products" />
 </template>
 
@@ -14,6 +17,7 @@ type ResponseData = {
   categories: string[];
   products: TProduct[];
 };
+const selectedCategory = ref<string>("all");
 const { data, status } = await useAsyncData<ResponseData>(
   "products-categories",
   async () => {
@@ -25,6 +29,11 @@ const { data, status } = await useAsyncData<ResponseData>(
 
     return { categories, products };
   }
+);
+
+const filteredProducts = computed(
+  () =>
+    data?.products?.filter((p) => p.category === selectedCategory.value) ?? []
 );
 </script>
 <style scoped></style>
